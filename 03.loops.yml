@@ -10,7 +10,6 @@
         - orange
         - grape
         - banana
-      when: what == "f"
     - name: Print Fruit Name and Quantity
       ansible.builtin.debug:
         msg: Fruti Name - {{ item.name }}, Quantity - {{ item.qty }}
@@ -19,4 +18,3 @@
         - { name: Orange, qty: 200 }
         - { name: grape, qty: 300 }
         - { name: banana, qty: 400 }
-      when: what == "fq"
