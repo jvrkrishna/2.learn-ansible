@@ -1,0 +1,6 @@
+- name: Print parameter from parameter store
+  hosts: localhost
+  connections: local
+  tasks:
+    - name: lookup ssm parameter store in specified region
+      debug: msg="{{ lookup('aws_ssm', 'practive.test', region='us-east-1' ) }}"
