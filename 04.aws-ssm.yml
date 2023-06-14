@@ -1,4 +1,4 @@
-- name: Print parameters form parameter store
+- name: Print parameters from parameter store
   hosts: localhost
   connection: local
   tasks:
