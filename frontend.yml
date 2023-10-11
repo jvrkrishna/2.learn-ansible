@@ -14,7 +14,7 @@
 
     - name: creating directory
       ansible.builtin.file:
-        path: /etc/foo
+        path: /usr/share/nginx/html
         state: directory
 
     - name: Downloading new app content
