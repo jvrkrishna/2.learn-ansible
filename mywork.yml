@@ -1,23 +1,22 @@
-- name: Set up Frontend
+- name: Creating Frontend Server
   hosts: all
-  become: yes
   tasks:
     - name: Installing Nginx Server
       ansible.builtin.yum:
         name: nginx
         state: latest
 
-    - name: Remove directory
+    - name: Removing a directory
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: absent
 
-    - name: creating directory
+    - name: create a directory
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: directory
 
-    - name: Downloading new app content
+    - name: Downloading new app content$
       ansible.builtin.unarchive:
         src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
         dest: /usr/share/nginx/html
@@ -29,7 +28,7 @@
         dest: /etc/nginx/default.d/roboshop.conf
 
     - name: Enabling and restarting Nginx Server
-      ansible.builtin.systemd:
+      ansible.builtin.service:
         name: nginx
-        state: started
-        enabled: true
+        state: restarted
+        enabled: yes
