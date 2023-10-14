@@ -4,3 +4,8 @@
     - name: Print Hello World
       ansible.builtin.debug:
         msg: Hello World
+
+    - name: Including sindhu task
+        ansible.builtin.import_tasks:
+          file: sindhu.yml
+
