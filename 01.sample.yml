@@ -1,11 +1,9 @@
-- name: Demo playbook
+- name: Declare variable
   hosts: all
+  vars:
+    URL: example.com
   tasks:
-    - name: Print Hello World
+    - name: Print the URL variable
       ansible.builtin.debug:
-        msg: Hello World
-
-    - name: Including sindhu task
-      ansible.builtin.import_tasks:
-        file: sindhu.yml
+        msg: URL - {{ URL }}
 
