@@ -1,4 +1,3 @@
-
 - name: Demo on conditions
   hosts: localhost
   connection: local
