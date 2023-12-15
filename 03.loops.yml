@@ -6,7 +6,7 @@
       ansible.builtin.debug:
         msg: Fruit Name - {{ item }}
       loop:
-        - main.tf
+        - main.tfvars
         - orange
         - grape
         - banana
